@@ -18,15 +18,12 @@ def minOperations(n):
         return 0
 
     operations = 0
-    """Number of 'H' characters currently in the file"""
-    current = 1
-    """Number of 'H' characters in the clipboard"""
-    clipboard = 1
+    divisor = 2
 
-    while current < n:
-        if n % current == 0:
-            clipboard = current
-        current += clipboard
-        operations += 1
+    while n > 1:
+        while n % divisor == 0:
+            operations += divisor
+            n //= divisor
+        divisor += 1
 
     return operations
