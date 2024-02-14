@@ -1,11 +1,16 @@
 #!/usr/bin/python3
 """
-Primegame
+Primegame number
 """
 
 
 def isWinner(x, nums):
+    """
+    generate winner
+    """
     def sieve_of_eratosthenes(n):
+        """use algorith
+        """
         sieve = [True] * (n + 1)
         sieve[0] = sieve[1] = False
         for i in range(2, int(n ** 0.5) + 1):
@@ -15,6 +20,9 @@ def isWinner(x, nums):
         return [i for i in range(n + 1) if sieve[i]]
 
     def optimal_strategy(primes):
+        """
+        check optimal
+        """
         if len(primes) % 2 == 0:
             return "Ben"
         else:
